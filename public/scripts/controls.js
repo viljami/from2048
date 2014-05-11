@@ -16,8 +16,8 @@ define([
     var p2u = box2dUtils.p2u;
     var getBodyAt = box2dUtils.getBodyAt;
 
-    var stopperEvent = isMobile ? 'touchdown' : 'mousedown';
-    var actionEvent = isMobile ? 'touchup' : 'mouseup';
+    var stopperEvent = isMobile ? 'touchstart' : 'mousedown';
+    var actionEvent = isMobile ? 'touchend' : 'mouseup';
 
     var reportBodyAtTap = function(body){
         events.trigger('tap:body', body);
