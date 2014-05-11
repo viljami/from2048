@@ -1,0 +1,40 @@
+{
+  "name": "from2048",
+  "preferGlobal": false,
+  "version": "0.0.2",
+  "author": "Viljami <contact@viljamipeltola.com>",
+  "description": "Testing ground for game logic.",
+  "bin": {
+    "gamer": "./index.js"
+  },
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viljami/from2048.git"
+  },
+  "keywords": [
+    "HTML5",
+    "JavaScript",
+    "game",
+    "canvas"
+  ],
+  "dependencies": {
+    "connect": "2.14.x",
+    "lodash": "2.4.x",
+    "requirejs": "*",
+    "three": "0.66.x",
+    "backbone": "1.1.x",
+    "almond": "~0.2.9"
+  },
+  "analyze": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-requirejs": "~0.4.4",
+    "grunt-contrib-copy": "~0.5.0"
+  }
+}

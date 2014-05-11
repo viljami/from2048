@@ -1,0 +1,113 @@
+
+<!Doctype html>
+<html>
+<head>
+    <title>From 2048</title>
+    <meta name="description" content="From 2048 is a game where you keep splitting until you got them all.">
+    <style rel="stylesheet">
+        html, body, div, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #faf8ef;
+            font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+            color: #776e65;
+            font-size: 18px;
+        }
+
+        h1 {
+            text-align: left;
+            margin-top: 60px;
+        }
+
+        .main-content {
+            width: 640px;
+            margin: 20px auto;
+        }
+
+        .game {
+            width: 640px;
+            height: 420px;
+            margin: 0 -10px;
+            padding: 0;
+            border: 10px solid #999;
+            margin-bottom: 50px;
+        }
+
+        .social {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        hr {
+            border: none;
+            border-bottom: 1px solid #776e65;
+            margin: 20px 0px 30px 0px;
+            display: block;
+
+        }
+
+        p {
+            margin-bottom: 22px;
+            line-height: 20px;
+        }
+
+        a, a:active, a:hover, a:visited {
+            font-weight: bold;
+            color: #776e65;
+        }
+
+        .intro {
+            margin-bottom: 40px;
+        }
+
+        .new-game, .new-game:active, .new-game:hover, .new-game:visited {
+            margin: -10px;
+            padding: 0 20px;
+            background: #8f7a66;
+            border-radius: 3px;
+            text-decoration: none;
+            color: #f9f6f2;
+            height: 40px;
+            line-height: 42px;
+            text-align: center;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>From 2048</h1>
+        <p class="intro">
+            Break numbers and make 'em <b>all vanish!</b>
+            <a class="new-game">New Game</a>
+            <script>
+                document.getElementsByClassName('new-game')[0].addEventListener('click', function(){
+                    var gameFrame = document.getElementsByClassName('game')[0];
+                    gameFrame.src = gameFrame.src;
+                });
+            </script>
+        </p>
+        <iframe class="game" src="/game.html"></iframe>
+        <p><b>HOW TO PLAY:</b> Tap breaks tiles. Try to make them all vanish!</p>
+        <hr>
+        <p><b>NOTE:</b>
+            <a href="http://en.wikipedia.org/wiki/Tribute">A tribute</a>
+            (from Latin tributum, contribution) is wealth, often in kind, that one party gives to another as a sign of respect.
+        </p>
+        <hr>
+        <p>Created by
+            <a href="http://viljamipeltola.com">Viljami Peltola</a>. Based on a highly addictive game, 2048, by
+            <a href="http://gabrielecirulli.github.io/2048/">Gabriele Cirulli</a>.
+        <p>
+
+        <p class="social">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check this out, From 2048 is a game that splits!" data-via="viljamipeltola" data-related="viljamipeltola" data-hashtags="from2048">Tweet</a>
+        </p>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+</body>
+</html>
