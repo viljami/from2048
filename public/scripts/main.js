@@ -22,7 +22,7 @@ require([
     game.init();
     game.step();
 
-    var startEvent = isMobile ? 'touchstart' : 'mouseup';
+    var startEvent = 'mouseup'; //isMobile ? 'touchstart' : 'mouseup';
 
     var startGame = function(e){
         e.preventDefault();

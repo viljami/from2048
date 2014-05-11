@@ -19,8 +19,8 @@ define([
 
     var getBodyAtCoordinate = function(callback, coordinate){
         var aabb = new b2AABB();
-        aabb.lowerBound.Set(coordinate.x - 0.001, coordinate.y - 0.001);
-        aabb.upperBound.Set(coordinate.x + 0.001, coordinate.y + 0.001);
+        aabb.lowerBound.Set(coordinate.x - 0.2, coordinate.y - 0.2);
+        aabb.upperBound.Set(coordinate.x + 0.2, coordinate.y + 0.2);
 
         world.QueryAABB(function(fixture){
             var body = fixture.GetBody();

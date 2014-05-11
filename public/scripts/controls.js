@@ -17,14 +17,24 @@ define([
     var getBodyAt = box2dUtils.getBodyAt;
 
     var stopperEvent = isMobile ? 'touchstart' : 'mousedown';
-    var actionEvent = isMobile ? 'touchend' : 'mouseup';
+    var actionEvent = isMobile ? 'touchstart' : 'mouseup';
 
     var reportBodyAtTap = function(body){
         events.trigger('tap:body', body);
     };
 
     var getUCoordinate = function(e){
-        return {x: p2u(e.x), y: p2u(e.y)};
+        var x, y, touch;
+        if (isMobile){
+            touch = e.touches[0];
+            x = touch.clientX;
+            y = touch.clientY;
+        } else {
+            x = e.x;
+            y = e.y;
+        }
+        
+        return {x: p2u(x), y: p2u(y)};
     };
 
     var stopEventDead = function(e){
@@ -35,17 +45,17 @@ define([
 
     var clickHandler = _.compose(
         _.curry(getBodyAt)(reportBodyAtTap),
-        getUCoordinate,
-        stopEventDead
+        getUCoordinate
+        // stopEventDead
     );
 
     var activate = function(){
-        canvas.addEventListener(stopperEvent, stopEventDead);
+        if (! isMobile) canvas.addEventListener(stopperEvent, stopEventDead);
         canvas.addEventListener(actionEvent, clickHandler);
     };
 
     var deactivate = function(){
-        canvas.removeEventListener(stopperEvent, stopEventDead);
+        if (! isMobile) canvas.removeEventListener(stopperEvent, stopEventDead);
         canvas.removeEventListener(actionEvent, clickHandler);
     };
 
