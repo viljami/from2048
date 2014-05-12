@@ -9,7 +9,6 @@ var app = connect()
     .use(connect.static('node_modules/three'))
     .use(connect.static('build'))
     // .use(connect.static('public'))
-    // .use(connect.directory('public'))
     .use(connect.cookieParser())
     .use(connect.session({ secret: 'Use the force, Luke.' }));
 
