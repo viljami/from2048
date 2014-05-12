@@ -1,7 +1,19 @@
 
 require.config({
     paths: {
-        'lodash': '/lodash'
+        'lodash': '/lodash',
+        'Box2D': '/vendor/Box2dWeb-2.1.a.3',
+        'setup': '/lib/setup'
+    },
+    shim: {
+        'Box2D': {
+            deps: [],
+            exports: 'Box2D'
+        },
+        'setup': {
+            deps: [],
+            exports: 'setup'
+        }
     }
 });
 
@@ -10,13 +22,16 @@ require([
     'events',
     'game',
     'score',
-    'is-mobile'
+    'is-mobile',
+    'Box2D',
+    'setup'
 ], function(
     config,
     events,
     game,
     score,
-    isMobile
+    isMobile,
+    Box2D
 ){
     // GAME
     game.init();

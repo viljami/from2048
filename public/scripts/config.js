@@ -1,4 +1,4 @@
-define([], function(){
+define(['Box2D'], function(Box2D){
     var b2Vec2 = Box2D.Common.Math.b2Vec2;
 
     var canvas = document.getElementsByTagName("canvas")[0];
